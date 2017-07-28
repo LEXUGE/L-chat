@@ -151,7 +151,6 @@ class chat_server(Thread):
         self.s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.host = get_host_ip()
-        print(self.host)
         self.port = cnt_info["server_port"]
         self.s.bind((self.host, self.port))
         recv_msg_from = threading.Thread(target=self.recv_msg_from)
@@ -175,10 +174,13 @@ if __name__=="__main__":
     client=chat_client()
     server=chat_server()
 
+    print("Welcome to L-chat!")
+    print("Your IP Address: "+get_host_ip())
+    print("",end="\n")
     while flag==0:
         cnt_info = get_connect_info()
         if cnt_info!=-1:
-            print("You will connect to:"+str(cnt_info))
+            print("Connect informations:"+str(cnt_info))
             flag=1
         else:
             print(" ")
