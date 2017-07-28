@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-
+#!/usr/bin/env python3
+# encoding: utf-8
 import socket
 from threading import Thread
 import threading
@@ -46,7 +46,7 @@ def recv_msg(sock):
         return None
     msglen = struct.unpack('>I', raw_msglen)[0]
     # Read the message data
-    return recvall(sock, msglen).decode(errors="ignore")
+    return recvall(sock, msglen).decode("utf-8", "ignore")
 
 def recvall(sock, n):
     # Helper function to recv n bytes or return None if EOF is hit
