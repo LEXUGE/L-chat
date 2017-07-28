@@ -16,7 +16,6 @@ CLIENT = {
 }
 
 SERVER = {
-    "SERVER_PORT":3399,
     "SERVER_BACKLOG":5,
     "WELCOME_MESSAGE":"Welcome to L-Chat!",
     "SERVER_LOG_HEAD":"[SERVER] "
